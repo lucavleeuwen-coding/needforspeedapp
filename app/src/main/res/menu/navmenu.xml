@@ -2,7 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
     <item
         android:id="@+id/main_menu_register_car_btn"
         android:layout_width="wrap_content"
@@ -15,7 +14,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:showAsAction="ifRoom"
-        android:title="New car" />
+        android:title="Add car" />
 
     <item
         android:id="@+id/main_menu_my_trip_btn"
@@ -43,5 +42,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:showAsAction="ifRoom"
-        android:title="cars" />
+        android:title="my cars" />
 </menu>
