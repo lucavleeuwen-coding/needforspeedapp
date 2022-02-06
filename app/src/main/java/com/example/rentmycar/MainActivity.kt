@@ -47,10 +47,10 @@ class MainActivity : AppCompatActivity() {
                             Log.d("Success", it.id.toString())
                         }
                         //Shows success message on screen
-                        Toast.makeText(this@MainActivity, "New user registered", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@MainActivity, "Welcome new User", Toast.LENGTH_SHORT).show()
                     } else {
                         //Shows failure message on screen
-                        Toast.makeText(this@MainActivity, "User already exists", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@MainActivity, "User exist", Toast.LENGTH_SHORT).show()
                     }
                 }
             }
