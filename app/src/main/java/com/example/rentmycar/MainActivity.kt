@@ -33,8 +33,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.user_register)
 
         //Finds and sets input fields and buttons
-        register_username_input = findViewById(R.id.UsernameInput)
-        register_password_input = findViewById(R.id.PasswordInput)
+        register_username_input = findViewById(R.id.register_username_input)
+        register_password_input = findViewById(R.id.register_password_input)
         registerUserBtn = findViewById(R.id.register_button)
         loginUserBtn = findViewById(R.id.login_button)
 
@@ -47,10 +47,10 @@ class MainActivity : AppCompatActivity() {
                             Log.d("Success", it.id.toString())
                         }
                         //Shows success message on screen
-                        Toast.makeText(this@MainActivity, "New user registered", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@MainActivity, "Welcome new User", Toast.LENGTH_SHORT).show()
                     } else {
                         //Shows failure message on screen
-                        Toast.makeText(this@MainActivity, "User already exists", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@MainActivity, "User exist", Toast.LENGTH_SHORT).show()
                     }
                 }
             }
@@ -60,12 +60,10 @@ class MainActivity : AppCompatActivity() {
             override fun onClick(view: View?) {
                 loginUser(Gebruiker(null, null, null, null, null, null, null, null, null,
                     null, register_username_input.text.toString(), register_password_input.text.toString(), null, null)){
-                    if (it?.username == null) {
-                        if (it == null) {
-                            Log.d("Success","test")
-                        }
-                            val intent = Intent(this@MainActivity, MainMenuActivity::class.java)
-                            startActivity(intent)
+                    if (it?.id != null) {
+                        Log.d("Success", it.id.toString())
+                        val intent = Intent(this@MainActivity, MainMenuActivity::class.java)
+                        startActivity(intent)
                     } else {
                         //Shows failure message on screen
                         Toast.makeText(this@MainActivity, "Failed to log in", Toast.LENGTH_SHORT).show()
@@ -74,7 +72,6 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
-
     private fun loginUser(params: Gebruiker, onResult: (Gebruiker?) -> Unit) {
         //Builds API service to login with
         val retrofit = ServiceBuilder.buildService(UserAPI::class.java)
@@ -111,3 +108,4 @@ class MainActivity : AppCompatActivity() {
         )
     }
 }
+

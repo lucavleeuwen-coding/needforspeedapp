@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="75dp"
+    android:layout_height="match_parent"
+    android:background="@drawable/background1"
     android:id="@+id/main_layout">
 
     <ImageView
@@ -12,15 +14,24 @@
         android:layout_marginLeft="5dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logo1"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="96dp"
+        android:textColor="@color/white"
+        android:text="Choose:"
+        android:textAlignment="center"/>
 
     <Button
         android:id="@+id/main_menu_register_car_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="164dp"
         android:layout_marginRight="15dp"
-        android:text="New car"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Add car"
         app:layout_constraintEnd_toStartOf="@+id/main_menu_my_trip_btn"
         app:layout_constraintStart_toEndOf="@+id/imageView3"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,10 +40,9 @@
         android:id="@+id/main_menu_my_trip_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:layout_marginTop="164dp"
         android:layout_marginRight="15dp"
-        android:text="My trips"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="YOUR TRIP"
         app:layout_constraintEnd_toStartOf="@+id/main_menu_plan_trips_btn"
         app:layout_constraintStart_toEndOf="@+id/main_menu_register_car_btn"
         app:layout_constraintTop_toTopOf="parent" />
@@ -41,9 +51,9 @@
         android:id="@+id/main_menu_plan_trips_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="20dp"
-        android:text="Plan"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="164dp"
+        android:layout_marginRight="60dp"
+        android:text="THE PLAN"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/main_menu_my_trip_btn"
         app:layout_constraintTop_toTopOf="parent" />
