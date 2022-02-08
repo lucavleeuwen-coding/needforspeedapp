@@ -7,9 +7,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.rentmycar.R
 
 class MainMenuActivity : AppCompatActivity() {
-    lateinit var mainMenuPlanTripsBtn: Button
-    lateinit var mainMenuMyTripBtn : Button
-    lateinit var mainMenuRegisterCarBtn : Button
+    private lateinit var mainMenuPlanTripsBtn: Button
+    private lateinit var mainMenuMyTripBtn : Button
+    private lateinit var mainMenuRegisterCarBtn : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
 

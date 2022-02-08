@@ -1,22 +1,21 @@
 package com.example.rentmycar.activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.rentmycar.R
 import com.example.rentmycar.adapter.CarAdapter
-import com.example.rentmycar.model.Car
 import com.example.rentmycar.viewmodel.CarViewModel
 import kotlinx.android.synthetic.main.cars_layout.*
 
 class CarActivity : AppCompatActivity() {
-    lateinit var carAdapter: CarAdapter
-    lateinit var linearLayoutManager: LinearLayoutManager
+    private lateinit var carAdapter: CarAdapter
+    private lateinit var linearLayoutManager: LinearLayoutManager
 
     //Creates option menu
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -51,7 +50,7 @@ class CarActivity : AppCompatActivity() {
     //Create car adapter to retrieve car data and put it in a recyclerview
     private fun getCars() {
         val model: CarViewModel by viewModels()
-        model.getCars().observe(this, Observer<List<Car>> { cars ->
+        model.getCars().observe(this, Observer { cars ->
             carAdapter = CarAdapter(baseContext, cars)
             carAdapter.notifyDataSetChanged()
             recyclerview_cars.adapter = carAdapter

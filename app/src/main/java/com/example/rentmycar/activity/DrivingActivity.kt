@@ -7,7 +7,6 @@ import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log.d
 import android.view.Menu
@@ -15,23 +14,24 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.example.rentmycar.R
 import com.example.rentmycar.ServiceBuilder
 import com.example.rentmycar.api.TripAPI
 import com.example.rentmycar.api.UserAPI
 import com.example.rentmycar.model.Acceleration
-import com.example.rentmycar.model.Trip
 import com.example.rentmycar.model.Gebruiker
+import com.example.rentmycar.model.Trip
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class DrivingActivity: AppCompatActivity(), SensorEventListener {
-    lateinit var gps: TextView
+    private lateinit var gps: TextView
     lateinit var credit_score_text: TextView
     lateinit var stop_button : Button
-    lateinit var sensorManager : SensorManager
-    var trip_id : Int = 0
+    private lateinit var sensorManager : SensorManager
+    private var trip_id : Int = 0
     var active : Boolean = true
 
     //Creates option menu
@@ -76,11 +76,11 @@ class DrivingActivity: AppCompatActivity(), SensorEventListener {
             override fun onClick(view: View?) {
                 if(active){
                     //Deactivates speed observation
-                    active = false;
+                    active = false
                     stop_button.setBackgroundColor(Color.GRAY)
                 } else {
                     //Activates speed observation
-                    active = true;
+                    active = true
                     stop_button.setBackgroundColor(Color.MAGENTA)
                 }
             }
@@ -131,7 +131,7 @@ class DrivingActivity: AppCompatActivity(), SensorEventListener {
                     )
                 }
             } else {
-                d("Error", ":(");
+                d("Error", ":(")
             }
         }
     }

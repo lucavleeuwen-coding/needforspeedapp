@@ -2,25 +2,20 @@ package com.example.rentmycar.activity
 
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log.d
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.rentmycar.R
-import com.example.rentmycar.ServiceBuilder
 import com.example.rentmycar.adapter.TripAdapter
-import com.example.rentmycar.api.TripAPI
 import com.example.rentmycar.model.Trip
 import com.example.rentmycar.viewmodel.TripViewModel
 import kotlinx.android.synthetic.main.trips_layout.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class TripActivity: AppCompatActivity() {
     lateinit var tripAdapter: TripAdapter

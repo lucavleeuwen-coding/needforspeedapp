@@ -17,14 +17,14 @@ import com.example.rentmycar.ServiceBuilder
 import com.example.rentmycar.activity.TripActivity
 import com.example.rentmycar.api.TripAPI
 import com.example.rentmycar.model.Car
-import com.example.rentmycar.model.Trip
 import com.example.rentmycar.model.Gebruiker
+import com.example.rentmycar.model.Trip
 import kotlinx.android.synthetic.main.row_cars.view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class CarAdapter (val context: Context, var carList: List<Car>): RecyclerView.Adapter<CarAdapter.ViewHolder>() {
+class CarAdapter (private val context: Context, private var carList: List<Car>): RecyclerView.Adapter<CarAdapter.ViewHolder>() {
     class ViewHolder(carView: View): RecyclerView.ViewHolder(carView) {
         var brand: TextView
         var brand_model: TextView
@@ -65,10 +65,10 @@ class CarAdapter (val context: Context, var carList: List<Car>): RecyclerView.Ad
                         val intent = Intent(view.context, TripActivity::class.java)
                         //Saves succes in intent
                         intent.putExtra("success", true.toString())
-                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                         view.context.startActivity(intent)
                     } else {
-                        d("Error", ":(");
+                        d("Error", ":(")
                     }
                 }
             }

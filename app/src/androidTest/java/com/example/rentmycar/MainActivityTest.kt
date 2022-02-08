@@ -1,6 +1,5 @@
 package com.example.rentmycar
 
-import android.util.Log.d
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.*
